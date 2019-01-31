@@ -1,0 +1,37 @@
+{
+	"INVALID_LOGIN": "Invalid login attempt.",
+	"INVALID_EMAIL": "Not valid email address.",
+	"INVALID_PASSWORD_FORMAT": "Invalid password format.",
+	"EMAIL_EXISTS": "Email already registered.",
+	"INVALID_USER_TYPE": "Invalid user type.",
+	"INVALID_PHONE": "Invalid phone number.",
+	"INVALID_ID": "Must have identification number.",
+	"INVALID_OBJECTID": "Please provide valid record identifier.",
+	"USER_NOT_FOUND": "Could not found your account. please try again.",
+	"INVALID_FIRSTNAME": "First name should be at least 3 character and maximum of 50 character.",
+	"INVALID_LASTNAME": "Last name should be at least 3 character and maximum of 50 character.",
+	"INVALID_COMFIRM_TOKEN": "Invalid token to confirm your email.",
+	"INVALID_RESET_PASSWORD_TOKEN": "Invalid token to reset your password.",
+	"EMAIL_NOT_VERIFIED": "Your email address is not verified.",
+	"ACCOUNT_BLOCK": "Your account is blocked.",
+	"RESET_EMAIL_SUCCESS": "We have sent reset password link to your email address. please follow the instruction.",
+	"PASSWORD_NOT_MATCH": "Password and confirm password do not match.",
+	"RESET_SUCCESS": "Your password has been successfully reset.",
+	"INVALID_RESET_TOKEN": "You have provided wrong reset password token.",
+	"INVALID_VIDEO_FILE_FORMAT": "Not a valid video file. please try again.",
+	"FILE_TOO_LARGE": "Video file size is too large. Only 30 seconds video is allowed.",
+	"INVALID_BANK_NAME": "Please provide bank name.",
+	"INVALID_IBAN_NO": "Please provide valid iBan account number.",
+	"INVALID_HOME_ADDRESS": "Please provide address detail.",
+	"INVALID_POPULATION": "Please provide population detail.",
+	"INVALID_PROFILE_IMAGE": "Please provide profile image.",
+	"INVALID_FLAG_FORMAT": "INVALID_FLAG_FORMAT",
+	"CHANGE_SUCCESS": "CHANGE_SUCCESS",
+	"USER_DELETE": "User deleted successfully",
+	"USER_MUST_FIELD_OR_SUPPORT": "User must be field or support engineer",
+	"USER_STATUS_MUST_BUZY_OR_IDLE": "User status must be Busy or Idle"
+	
+	
+
+	
+}

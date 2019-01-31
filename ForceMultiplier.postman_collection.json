@@ -1,0 +1,176 @@
+{
+	"id": "9c76baa1-09fb-229b-0b47-3435de88ab04",
+	"name": "ForceMultiplier",
+	"description": "",
+	"order": [
+		"83862d76-fb8b-37cc-2018-336f89ec007a",
+		"f5d85973-809a-9265-2a87-7d6d0a00de6a",
+		"929f5391-9229-d54b-3678-af0b7f2b7fb8"
+	],
+	"folders": [],
+	"folders_order": [],
+	"timestamp": 1548912376942,
+	"owner": "6326774",
+	"public": false,
+	"requests": [
+		{
+			"id": "83862d76-fb8b-37cc-2018-336f89ec007a",
+			"headers": "//Content-Type: application/x-www-form-urlencoded\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/x-www-form-urlencoded",
+					"description": "",
+					"enabled": false
+				}
+			],
+			"url": "{{localhost}}/api/signup",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "name",
+					"value": "Rounak Raghani",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "emailAddress",
+					"value": "ronak@gmail.com",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "password",
+					"value": "killall",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "userCode",
+					"value": "field",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "urlencoded",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1548917727062,
+			"name": "SignUp",
+			"description": "",
+			"collectionId": "9c76baa1-09fb-229b-0b47-3435de88ab04",
+			"responses": []
+		},
+		{
+			"id": "929f5391-9229-d54b-3678-af0b7f2b7fb8",
+			"headers": "//Content-Type: application/x-www-form-urlencoded\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/x-www-form-urlencoded",
+					"description": "",
+					"enabled": false
+				}
+			],
+			"url": "{{localhost}}/api/setfieldengdata",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "POST",
+			"collectionId": "9c76baa1-09fb-229b-0b47-3435de88ab04",
+			"data": [
+				{
+					"key": "f_id",
+					"value": "",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "latitude",
+					"value": "",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "longitude",
+					"value": "",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "status",
+					"value": "",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "urlencoded",
+			"name": "SET Field Engineer Location with status",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1548917412991,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {}
+		},
+		{
+			"id": "f5d85973-809a-9265-2a87-7d6d0a00de6a",
+			"headers": "//Content-Type: application/x-www-form-urlencoded\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/x-www-form-urlencoded",
+					"description": "",
+					"enabled": false
+				}
+			],
+			"url": "{{localhost}}/api/login",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "emailAddress",
+					"value": "",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "password",
+					"value": "",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "urlencoded",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1548912578959,
+			"name": "Login",
+			"description": "",
+			"collectionId": "9c76baa1-09fb-229b-0b47-3435de88ab04",
+			"responses": []
+		}
+	]
+}
