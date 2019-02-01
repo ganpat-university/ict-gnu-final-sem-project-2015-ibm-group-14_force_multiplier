@@ -2,6 +2,7 @@
 	"INVALID_LOGIN": "Invalid login attempt.",
 	"INVALID_EMAIL": "Not valid email address.",
 	"INVALID_PASSWORD_FORMAT": "Invalid password format.",
+	"INVALID_PASSWORD": "Invalid Password",
 	"EMAIL_EXISTS": "Email already registered.",
 	"INVALID_USER_TYPE": "Invalid user type.",
 	"INVALID_PHONE": "Invalid phone number.",
