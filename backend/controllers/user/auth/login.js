@@ -16,13 +16,14 @@ const login = (req, res, next) => {
 			emailAddress: req.body.emailAddress,
 
 		}, (err, results) => {
-				if (err) { return res.boom.badRequest(err); }
+
 				if (!results) { return res.boom.notFound(res.__('USER_NOT_FOUND')); }
+				if (err) { return res.boom.badRequest(err); }
 
-				if(results.password == req.body.password) {
-					
-					
 
+				if(results.password != req.body.password) {
+					return res.boom.unauthorized(res.__('INVALID_PASSWORD'));
+					}
 
 					const token = jwt.sign({
 						emailAddress: results.emailAddress,
@@ -50,15 +51,13 @@ const login = (req, res, next) => {
 								userCode: results.userCode,
 								emailAddress: results.emailAddress,
 								name: results.name
-								
+
 							},
 							statusCode: 200
 						});
 					}
-				}
-				else {
-					return res.boom.unauthorized(res.__('INVALID_PASSWORD'));
-				}
+
+
 			});
 
 	} catch (error) {
