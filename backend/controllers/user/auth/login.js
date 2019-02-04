@@ -1,4 +1,4 @@
-const bcrypt = require("bcrypt");
+//const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const Joi = require('joi');
 const User = require("../../../models/user");
@@ -7,7 +7,7 @@ const login = (req, res, next) => {
 	try {
 		const result = Joi.validate(req.body, Joi.object().keys({
 			emailAddress: Joi.string().email().required().error(new Error(res.__('INVALID_EMAIL'))),
-			password: Joi.string().regex(/^[a-zA-Z0-9]{6,30}$/).required().error(new Error(res.__('INVALID_PASSWORD_FORMAT')))
+			password: Joi.string().regex(/^[a-zA-Z0-9]/).required().error(new Error(res.__('INVALID_PASSWORD_FORMAT')))
 		}));
 
 		if (result.error) { return res.boom.badRequest(result.error); }
@@ -16,13 +16,14 @@ const login = (req, res, next) => {
 			emailAddress: req.body.emailAddress,
 
 		}, (err, results) => {
-				if (err) { return res.boom.badRequest(err); }
+
 				if (!results) { return res.boom.notFound(res.__('USER_NOT_FOUND')); }
+				if (err) { return res.boom.badRequest(err); }
 
-				bcrypt.compare(req.body.password, results.password, (err, hash) => {
-					if (err) { return res.boom.expectationFailed(err); }
-					if (!hash) { return res.boom.unauthorized(res.__('USER_NOT_FOUND')); }
 
+				if(results.password != req.body.password) {
+					return res.boom.unauthorized(res.__('INVALID_PASSWORD'));
+					}
 
 					const token = jwt.sign({
 						emailAddress: results.emailAddress,
@@ -50,12 +51,15 @@ const login = (req, res, next) => {
 								userCode: results.userCode,
 								emailAddress: results.emailAddress,
 								name: results.name
+
 							},
 							statusCode: 200
 						});
 					}
-				});
+
+
 			});
+
 	} catch (error) {
 		return res.boom.badRequest(error);
 	}

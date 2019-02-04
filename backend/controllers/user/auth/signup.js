@@ -1,4 +1,4 @@
-const bcrypt = require("bcrypt");
+//const bcrypt = require("bcrypt");
 const User = require("../../../models/user");
 const crypto = require('crypto');
 const Joi = require('joi');
@@ -10,7 +10,7 @@ const signup = (req, res, next) =>
 		const result = Joi.validate(req.body, Joi.object().keys({
 			name: Joi.string().regex(/[a-zA-Z]/).required(),
 			emailAddress: Joi.string().email().required().error(new Error(res.__('INVALID_EMAIL'))),
-			password: Joi.string().regex(/^[a-zA-Z0-9]{6,30}$/).required().error(new Error(res.__('INVALID_PASSWORD_FORMAT'))),
+			password: Joi.string().regex(/^[a-zA-Z0-9]/).required().error(new Error(res.__('INVALID_PASSWORD_FORMAT'))),
 			userCode: Joi.string().valid('field','support').required().error(new Error(res.__('USER_MUST_FIELD_OR_SUPPORT'))),
 			
 		}));
@@ -23,13 +23,12 @@ const signup = (req, res, next) =>
 			if(err) { return res.boom.badRequest(err); }
 			if(user) { return res.boom.notFound(res.__('EMAIL_EXISTS')); }
 
-			bcrypt.hash(req.body.password, 10).then(hash =>
-			{
+			
 				User.create({
 					
 					emailAddress: req.body.emailAddress,
 					
-					password: hash,
+					password: req.body.password,
 
 					name: req.body.name,
 
@@ -70,7 +69,7 @@ const signup = (req, res, next) =>
 					
 				
 				});
-			});
+			
 		});
 	} catch (error) {
 		return res.boom.badRequest(error);
