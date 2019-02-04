@@ -34,6 +34,7 @@ module.exports = {
                 return res.status(200).json({
                     results: {
                         f_id: results._id,
+                        emailAddress: results.emailAddress,
                         status: req.body.status,
                         latitude: req.body.latitude,
                         longitude: req.body.longitude
