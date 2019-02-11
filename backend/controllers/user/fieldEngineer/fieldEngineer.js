@@ -10,22 +10,23 @@ module.exports = {
             const result = Joi.validate(req.body, Joi.object().keys({
                 //name: Joi.string().regex(/[a-zA-Z]/).required(),
                 //emailAddress: Joi.string().email().required().error(new Error(res.__('INVALID_EMAIL'))),
-                
+
                 latitude: Joi.string().required(),
                 longitude: Joi.string().required(),
                 status: Joi.string().valid('Busy', 'Idle').required().error(new Error(res.__('USER_STATUS_MUST_BUZY_OR_IDLE'))),
 
             }));
-            
+
 
             if (result.error) { return res.boom.badRequest(result.error); }
 
-            User.findById( mongoose.Types.ObjectId(req.userData.userId),(err, results) => {
+            User.findById(mongoose.Types.ObjectId(req.userData.userId), (err, results) => {
                 if (err) { return res.boom.badRequest(err); }
                 if (!results) { return res.boom.notFound(res.__('USER_NOT_FOUND')); }
-                
-                
+
+
                 results.userLocation.latitude = req.body.latitude,
+                    results.userLocation.latitude = req.body.latitude,
                     results.userLocation.longitude = req.body.longitude,
                     results.userLocation.status = req.body.status
 
