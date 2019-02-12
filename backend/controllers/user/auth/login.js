@@ -27,7 +27,8 @@ const login = (req, res, next) => {
 
 					const token = jwt.sign({
 						emailAddress: results.emailAddress,
-						userId: results._id
+						userId: results._id,
+						userCode: results.userCode
 					}, global.gConfig.secret_key, { expiresIn: "7d" });
 
 					if (results.userCode == 'field') {
@@ -50,7 +51,8 @@ const login = (req, res, next) => {
 								s_id: results._id,
 								userCode: results.userCode,
 								emailAddress: results.emailAddress,
-								name: results.name
+								name: results.name,
+								accessToken: token
 
 							},
 							statusCode: 200
