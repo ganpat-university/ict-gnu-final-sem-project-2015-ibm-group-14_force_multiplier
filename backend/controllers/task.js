@@ -37,7 +37,6 @@ module.exports = {
                 longitude: req.body.longitude
             }, (err, task) => {
                 if (err) { return res.boom.badRequest(err); }
-
                 customerLat = req.body.latitude * (3.14 / 180);
                 customerLng = req.body.longitude * (3.14 / 180);
 
@@ -45,7 +44,7 @@ module.exports = {
                     console.log('result',result);
                     if (err) { return res.boom.badRequest(err); }
                     if (!result) { return res.boom.notFound('No idle field engineer found') }
-                    if (result == '') { return res.boom.notFound('No idle field engineer found') }
+                    if (result == '') { return res.boom.notFound('Task has been created, but no idle field engineer found to assign your task') }
                     let assigEng = result.map(nearestEng)
                     let min = assigEng[0][0]
                     let field_id;
@@ -79,9 +78,9 @@ module.exports = {
         }
     },
 
-    getAssignedEngineer: (req,res) => {
-        
-    }
+  //  getAssignedEngineer: (req,res) => {
+ //       
+  //  }
 
 }
 

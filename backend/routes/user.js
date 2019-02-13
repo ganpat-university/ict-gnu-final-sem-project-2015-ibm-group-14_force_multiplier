@@ -15,5 +15,5 @@ router.post("/setfieldengdata", field_checkauth, FieldEngineerData.postFieldEngi
 //customer 
 
 router.post("/set-task", support_checkauth, Task.postNewTask);
-router.get("/assignedEng", support_checkauth, Task.getAssignedEngineer)
+//router.get("/assignedEng", support_checkauth, Task.getAssignedEngineer)
 module.exports = router;
