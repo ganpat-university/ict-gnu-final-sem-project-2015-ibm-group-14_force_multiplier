@@ -10,12 +10,12 @@ let customerLng;
 
 function nearestEng(fieldEngineer) {
     //return fieldEngineer.userLocation
-    distance = (2 * Math.asin(Math.sqrt(Math.pow(Math.sin((fieldEngineer.userLocation.latitude * (3.14 / 180) - customerLat) / 2), 2) + Math.cos(customerLat) * Math.cos(fieldEngineer.userLocation.latitude * (3.14 / 180)) * Math.pow(Math.sin((fieldEngineer.userLocation.longitude * (3.14 / 180) - customerLng) / 2), 2)))) * earthradius 
-    field_id = fieldEngineer._id
-    result = [distance , field_id]
+    let distance = (2 * Math.asin(Math.sqrt(Math.pow(Math.sin((fieldEngineer.userLocation.latitude * (3.14 / 180) - customerLat) / 2), 2) + Math.cos(customerLat) * Math.cos(fieldEngineer.userLocation.latitude * (3.14 / 180)) * Math.pow(Math.sin((fieldEngineer.userLocation.longitude * (3.14 / 180) - customerLng) / 2), 2)))) * earthradius
+    let field_id = fieldEngineer._id
+    let result = [distance, field_id]
     return result;
 
-    
+
     // console.log(min)
 }
 
@@ -35,37 +35,53 @@ module.exports = {
                 custName: req.body.custName,
                 latitude: req.body.latitude,
                 longitude: req.body.longitude
-            }, (err, results) => {
+            }, (err, task) => {
                 if (err) { return res.boom.badRequest(err); }
 
                 customerLat = req.body.latitude * (3.14 / 180);
                 customerLng = req.body.longitude * (3.14 / 180);
 
-                User.find({ userCode: 'field', 'userLocation.status': 'Idle' }, (err, result) => {
-                     let assigEng = result.map(nearestEng)
-                     console.log(assigEng)
+                User.find({ userCode: 'field', 'userLocation.status': 'Idle' } , (err, result) => {
+                    console.log('result',result);
+                    if (err) { return res.boom.badRequest(err); }
+                    if (!result) { return res.boom.notFound('No idle field engineer found') }
+                    if (result == '') { return res.boom.notFound('No idle field engineer found') }
+                    let assigEng = result.map(nearestEng)
+                    let min = assigEng[0][0]
+                    let field_id;
+                    for (i = 0; i < assigEng.length; i++) {
 
-
+                        if (assigEng[i][0] <= min) {
+                            min = assigEng[i][0]
+                            field_id = assigEng[i][1];
+                        }
+                    }
+                    console.log(assigEng);
+                    User.findById(mongoose.Types.ObjectId(field_id), (err, result) => {
+                        result.userLocation.status = 'Busy'
+                        result.save();
+                        task.field_id = field_id;
+                        task.save()
+                        return res.status(200).json({
+                            result: {
+                                fieldEngineerName: result.name,
+                                distance: min
+                            },
+                            statusCode: 200
+                        }
+                        );
+                    });
                 })
-
-                return res.status(200).json({
-
-                    statusCode: 200
-                }
-                );
-
             });
-
         }
         catch (error) {
             return res.boom.badRequest(error);
         }
     },
 
-    getTaskWithAssignedEngineer: (req, res) => {
-        User.find((err, result) => {
-            console.log('ALL USERS', result);
-        })
+    getAssignedEngineer: (req,res) => {
+        
     }
+
 }
 

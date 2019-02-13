@@ -19,6 +19,9 @@ const taskSchema = mongoose.Schema({
         type: String,
         default: 'InProgress'
     },
+    field_id: {
+        type: String
+    },
 	createdAt: {
 		type: Date,
 		default: new Date()
