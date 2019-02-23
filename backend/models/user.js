@@ -20,6 +20,10 @@ const userSchema = mongoose.Schema({
 		type: String,
 		required: true,
 	},
+	queue: {
+		type: Array,
+		maxItems: 3
+	},
 	userLocation: {
 		 latitude: {type: String},
 		  longitude: {type: String} ,

@@ -11,9 +11,12 @@ const Task = require('../controllers/task.js');
 router.post("/signup", SignUp);
 router.post("/login", Login);
 router.post("/setfieldengdata", field_checkauth, FieldEngineerData.postFieldEngineerLocation);
+router.post("/set-task", support_checkauth, Task.postNewTask);
+
+router.post("/assign-eng/:taskId",Task.assignEng );
 
 //customer 
 
-router.post("/set-task", support_checkauth, Task.postNewTask);
-//router.get("/assignedEng", support_checkauth, Task.getAssignedEngineer)
+
+//router.get("/assign-eng", support_checkauth, Task.getAssignedEngineer)
 module.exports = router;

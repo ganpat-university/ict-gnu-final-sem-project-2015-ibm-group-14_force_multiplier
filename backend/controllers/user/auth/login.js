@@ -16,7 +16,7 @@ const login = (req, res, next) => {
 			emailAddress: req.body.emailAddress,
 
 		}, (err, results) => {
-
+			console.log(results);
 				if (!results) { return res.boom.notFound(res.__('USER_NOT_FOUND')); }
 				if (err) { return res.boom.badRequest(err); }
 
