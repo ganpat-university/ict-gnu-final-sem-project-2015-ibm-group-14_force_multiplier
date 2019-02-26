@@ -20,9 +20,9 @@ const userSchema = mongoose.Schema({
 		type: String,
 		required: true,
 	},
-	queue: {
-		type: Array,
-		maxItems: 3
+	taskQueue: {
+		type: Array
+		
 	},
 	userLocation: {
 		 latitude: {type: String},

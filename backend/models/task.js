@@ -22,6 +22,9 @@ const taskSchema = mongoose.Schema({
     field_id: {
         type: String
     },
+    reqTime: {
+        type: Number
+    },
 	createdAt: {
 		type: Date,
 		default: new Date()
