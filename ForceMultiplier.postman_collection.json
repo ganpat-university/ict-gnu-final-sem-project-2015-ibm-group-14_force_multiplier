@@ -1,176 +1,209 @@
 {
-	"id": "9c76baa1-09fb-229b-0b47-3435de88ab04",
-	"name": "ForceMultiplier",
-	"description": "",
-	"order": [
-		"83862d76-fb8b-37cc-2018-336f89ec007a",
-		"f5d85973-809a-9265-2a87-7d6d0a00de6a",
-		"929f5391-9229-d54b-3678-af0b7f2b7fb8"
-	],
-	"folders": [],
-	"folders_order": [],
-	"timestamp": 1548912376942,
-	"owner": "6326774",
-	"public": false,
-	"requests": [
+	"variables": [],
+	"info": {
+		"name": "ForceMultiplier",
+		"_postman_id": "9c76baa1-09fb-229b-0b47-3435de88ab04",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
 		{
-			"id": "83862d76-fb8b-37cc-2018-336f89ec007a",
-			"headers": "//Content-Type: application/x-www-form-urlencoded\n",
-			"headerData": [
-				{
-					"key": "Content-Type",
-					"value": "application/x-www-form-urlencoded",
-					"description": "",
-					"enabled": false
-				}
-			],
-			"url": "{{localhost}}/api/signup",
-			"queryParams": [],
-			"preRequestScript": null,
-			"pathVariables": {},
-			"pathVariableData": [],
-			"method": "POST",
-			"data": [
-				{
-					"key": "name",
-					"value": "Rounak Raghani",
-					"description": "",
-					"type": "text",
-					"enabled": true
-				},
-				{
-					"key": "emailAddress",
-					"value": "ronak@gmail.com",
-					"description": "",
-					"type": "text",
-					"enabled": true
-				},
-				{
-					"key": "password",
-					"value": "killall",
-					"description": "",
-					"type": "text",
-					"enabled": true
-				},
-				{
-					"key": "userCode",
-					"value": "field",
-					"description": "",
-					"type": "text",
-					"enabled": true
-				}
-			],
-			"dataMode": "urlencoded",
-			"tests": null,
-			"currentHelper": "normal",
-			"helperAttributes": {},
-			"time": 1548917727062,
 			"name": "SignUp",
-			"description": "",
-			"collectionId": "9c76baa1-09fb-229b-0b47-3435de88ab04",
-			"responses": []
+			"request": {
+				"url": "{{localhost}}/api/signup",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "Krunal",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "emailAddress",
+							"value": "k@gmail.com",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "killall",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "userCode",
+							"value": "support",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
 		},
 		{
-			"id": "929f5391-9229-d54b-3678-af0b7f2b7fb8",
-			"headers": "//Content-Type: application/x-www-form-urlencoded\n",
-			"headerData": [
-				{
-					"key": "Content-Type",
-					"value": "application/x-www-form-urlencoded",
-					"description": "",
-					"enabled": false
-				}
-			],
-			"url": "{{localhost}}/api/setfieldengdata",
-			"queryParams": [],
-			"pathVariables": {},
-			"pathVariableData": [],
-			"preRequestScript": null,
-			"method": "POST",
-			"collectionId": "9c76baa1-09fb-229b-0b47-3435de88ab04",
-			"data": [
-				{
-					"key": "f_id",
-					"value": "",
-					"description": "",
-					"type": "text",
-					"enabled": true
-				},
-				{
-					"key": "latitude",
-					"value": "",
-					"description": "",
-					"type": "text",
-					"enabled": true
-				},
-				{
-					"key": "longitude",
-					"value": "",
-					"description": "",
-					"type": "text",
-					"enabled": true
-				},
-				{
-					"key": "status",
-					"value": "",
-					"description": "",
-					"type": "text",
-					"enabled": true
-				}
-			],
-			"dataMode": "urlencoded",
-			"name": "SET Field Engineer Location with status",
-			"description": "",
-			"descriptionFormat": "html",
-			"time": 1548917412991,
-			"version": 2,
-			"responses": [],
-			"tests": null,
-			"currentHelper": "normal",
-			"helperAttributes": {}
-		},
-		{
-			"id": "f5d85973-809a-9265-2a87-7d6d0a00de6a",
-			"headers": "//Content-Type: application/x-www-form-urlencoded\n",
-			"headerData": [
-				{
-					"key": "Content-Type",
-					"value": "application/x-www-form-urlencoded",
-					"description": "",
-					"enabled": false
-				}
-			],
-			"url": "{{localhost}}/api/login",
-			"queryParams": [],
-			"preRequestScript": null,
-			"pathVariables": {},
-			"pathVariableData": [],
-			"method": "POST",
-			"data": [
-				{
-					"key": "emailAddress",
-					"value": "",
-					"description": "",
-					"type": "text",
-					"enabled": true
-				},
-				{
-					"key": "password",
-					"value": "",
-					"description": "",
-					"type": "text",
-					"enabled": true
-				}
-			],
-			"dataMode": "urlencoded",
-			"tests": null,
-			"currentHelper": "normal",
-			"helperAttributes": {},
-			"time": 1548912578959,
 			"name": "Login",
-			"description": "",
-			"collectionId": "9c76baa1-09fb-229b-0b47-3435de88ab04",
-			"responses": []
+			"request": {
+				"url": "{{localhost}}/api/login",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"description": "",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "emailAddress",
+							"value": "b@gmail.com",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "killall",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "SET Field Engineer Location with status",
+			"request": {
+				"url": "{{localhost}}/api/setfieldengdata",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"description": "",
+						"disabled": true
+					},
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbEFkZHJlc3MiOiJiQGdtYWlsLmNvbSIsInVzZXJJZCI6IjVjN2UwMjhmZDU2MDBhMjFmNjhkNWEwNSIsInVzZXJDb2RlIjoiZmllbGQiLCJpYXQiOjE1NTE3NjIyNTgsImV4cCI6MTU1MjM2NzA1OH0.4Mgh7rnOuGkJyW9YziVOI5CiWGCO3P_XpCOuw_4m2vY",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "latitude",
+							"value": "23.9",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "longitude",
+							"value": "28.8",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "status",
+							"value": "Idle",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Set Task",
+			"request": {
+				"url": "{{localhost}}/api/set-task",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbEFkZHJlc3MiOiJrQGdtYWlsLmNvbSIsInVzZXJJZCI6IjVjN2UwMmIxZDU2MDBhMjFmNjhkNWEwNyIsInVzZXJDb2RlIjoic3VwcG9ydCIsImlhdCI6MTU1MTc2MjExMCwiZXhwIjoxNTUyMzY2OTEwfQ.Ee0KmimoGFymqv9wzRNdc6c_vSF7Y2o3xelnQStedJs",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"description": "",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "custName",
+							"value": "name",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "latitude",
+							"value": "23.07692",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "longitude",
+							"value": "2.524775",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "reqTime",
+							"value": "100",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "THIS IS TASK DESCRIPTION",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Assign Eng",
+			"request": {
+				"url": "{{localhost}}/api/assign-eng/5c7e02e3d5600a21f68d5a08",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbEFkZHJlc3MiOiJrQGdtYWlsLmNvbSIsInVzZXJJZCI6IjVjN2UwMmIxZDU2MDBhMjFmNjhkNWEwNyIsInVzZXJDb2RlIjoic3VwcG9ydCIsImlhdCI6MTU1MTc2MjExMCwiZXhwIjoxNTUyMzY2OTEwfQ.Ee0KmimoGFymqv9wzRNdc6c_vSF7Y2o3xelnQStedJs",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"description": "",
+						"disabled": true
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
 		}
 	]
 }

@@ -32,9 +32,9 @@ function assignEng(fieldEngineer) {
 
     q_a.push(sum(fieldEngineer.taskQueue))
 
-    distance = parseInt(distance) + parseInt(q_a)
+    timeToTravelEachEng = parseInt(distance/40) + parseInt(q_a)
 
-    let result = [distance, field_id]
+    let result = [timeToTravelEachEng, field_id]
     return result;
 
 }
@@ -44,6 +44,7 @@ module.exports = {
         try {
             const result = Joi.validate(req.body, Joi.object().keys({
                 custName: Joi.string().regex(/[a-zA-Z]/).required(),
+                description: Joi.string().required(),
                 latitude: Joi.string().required(),
                 longitude: Joi.string().required(),
                 reqTime: Joi.string().required()
@@ -53,6 +54,7 @@ module.exports = {
 
             Task.create({
                 custName: req.body.custName,
+                description: req.body.description,
                 latitude: req.body.latitude,
                 longitude: req.body.longitude,
                 reqTime: req.body.reqTime
@@ -79,24 +81,24 @@ module.exports = {
             if (taskId == undefined || taskId == '' || taskId == null) {
                 return res.boom.badRequest('taskID required');
             }
-            Task.findById(taskId, async (err, task_result) => {
+            Task.findById(taskId, (err, task_result) => {
                 if (err) { req.boom.badRequest('Task Id not Found.'); }
                 if (!task_result) { req.boom.notFound('Task not found.'); }
                 customerLat = task_result.latitude;
                 customerLng = task_result.longitude;
 
-                let distance = user_result.map(assignEng);
-                console.log('DIStaan', distance)
-                let min = distance[0][0];
+                let timeToTravelEachEng = user_result.map(assignEng);
+                //console.log('DIStaan', timeToTravelEachEng)
+                let min = timeToTravelEachEng[0][0];
                 let min_user_id;
 
-                for (let i = 0; i < distance.length; i++) {
+                for (let i = 0; i < timeToTravelEachEng.length; i++) {
 
-                    new_min = distance[i][0]
-                    min_user_id = distance[0][1]
+                    new_min = timeToTravelEachEng[i][0]
+                    min_user_id = timeToTravelEachEng[0][1]
                     if (new_min < min) {
                         min = new_min
-                        min_user_id = distance[i][1]
+                        min_user_id = timeToTravelEachEng[i][1]
                     }
                 }
 
