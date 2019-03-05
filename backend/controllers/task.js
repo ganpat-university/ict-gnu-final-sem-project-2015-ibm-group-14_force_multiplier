@@ -73,7 +73,7 @@ module.exports = {
 
             if (err) { return res.boom.badRequest(err); }
             if (!user_result || user_result.length == 0 || user_result == undefined || user_result == null) { return res.boom.notFound('No idle field engineer found') }
-            console.log(user_result)
+            //console.log(user_result)
 
             taskId = req.params.taskId;
             if (taskId == undefined || taskId == '' || taskId == null) {
@@ -117,8 +117,6 @@ module.exports = {
                     })
                 })
             })
-
-
         })
     }
 }
