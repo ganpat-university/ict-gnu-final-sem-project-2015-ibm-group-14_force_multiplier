@@ -204,6 +204,23 @@
 				"description": ""
 			},
 			"response": []
+		},
+		{
+			"name": "Get Field Engineer Data with TASKS",
+			"request": {
+				"url": "{{localhost}}/api/getfieldengdata/5c7e028fd5600a21f68d5a05",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbEFkZHJlc3MiOiJiQGdtYWlsLmNvbSIsInVzZXJJZCI6IjVjN2UwMjhmZDU2MDBhMjFmNjhkNWEwNSIsInVzZXJDb2RlIjoiZmllbGQiLCJpYXQiOjE1NTIzOTQzODAsImV4cCI6MTU1Mjk5OTE4MH0.nhhlIMdf9Nf8PRoiGwtmSrBcwYab8CXJsQHwUMtL1FA",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
 		}
 	]
 }

@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 const uniqueValidator = require("mongoose-unique-validator");
-
+const Schema = mongoose.Schema;
 const userSchema = mongoose.Schema({
 
 	name: {
@@ -20,16 +20,22 @@ const userSchema = mongoose.Schema({
 		type: String,
 		required: true,
 	},
-	taskQueue: {
-		type: Array
-		
-	},
+	taskQueue:
+
+		[{
+			taskId: {
+				type: Schema.ObjectId, ref: 'task'
+			}
+		}],
+
+
 	userLocation: {
-		 latitude: {type: String},
-		  longitude: {type: String} ,
-		  status: {type: String},
-		
+		latitude: { type: String },
+		longitude: { type: String },
+		status: { type: String },
+
 	},
+
 	createdAt: {
 		type: Date,
 		default: new Date()
