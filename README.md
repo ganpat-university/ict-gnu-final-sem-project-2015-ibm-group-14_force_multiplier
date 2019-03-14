@@ -8,6 +8,11 @@ For example for using SignUp API the url is like :-https://forcemultiplierapi.eu
 
 The API are deploy at IBM Cloud in Cloud Foundry Application specify SDK for nodejs and the database use by the API is Mongo Atlas which is another platform to host Databases.The Connectivity is kept under config folder ->config.json.
 
+Access to Mongo Atlas Database
+Mongo Atlas provides connection string. When you login into the account than at left side of window a connect option is ther.Than select Connect to the Application from the list and copy the url and add that url to config.json(in database part) file which is reside in config foler.
+
+If you want to use my Mongo Atlas database Please send a request.
+
 API's
 
 1. To signup into system (POST Method)
@@ -27,3 +32,18 @@ API's
 
 6. To Get Field Engineer Data with TASKS  (GET Method)
       {{localhost}}/api/getfieldengdata/fieldengID
+
+
+To Run the app locally
+
+1. Install Node.js.
+
+2. cd into this project's root directory.
+
+3. Run npm install to install the application dependencies.
+
+4. Run node server.js to start the app.
+
+5. Access the running api in a browser at http://localhost:3000.
+
+6. One can import this file ForceMultiplier.postman_collection.json in POSTMAN and can test the api.
