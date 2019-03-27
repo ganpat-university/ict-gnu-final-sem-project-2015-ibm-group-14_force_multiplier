@@ -13,7 +13,11 @@ Mongo Atlas provides connection string. When you login into the account than at 
 
 If you want to use my Mongo Atlas database Please send a request.
 
+Firebase Cloud Messaging(FCM) is use to send the notification to the field engineer when the new task/customer created into the system and second one when the newly task is assigned to the field engineer so that field engineer received a notification that "You Have Assign New Task".To see the code for push notification you can see the file pushnotification.js in backend folder.
+
 API's
+
+*{{localhost}} = "https://forcemultiplierapi.eu-gb.mybluemix.net"
 
 1. To signup into system (POST Method)
       {{localhost}}/api/signup?name="value"&emailAddress="value"&password="value&userCode="value"
@@ -27,12 +31,14 @@ API's
 4. To Set Task  (POST Method)
       {{localhost}}/api/set-task?custName="value"&latitude="value"&longitude="value"&reqTime="value"&description="value"
 
-5. To Assign Eng  (GEt Method)
+5. To Assign Eng  (GET Method)
       {{localhost}}/api/assign-eng/taskid
 
 6. To Get Field Engineer Data with TASKS  (GET Method)
       {{localhost}}/api/getfieldengdata/fieldengID
 
+7. CheckOut API for Field Eng.  (GET Method)
+      {{localhost}}/api/check-out/task-id
 
 To Run the app locally
 
