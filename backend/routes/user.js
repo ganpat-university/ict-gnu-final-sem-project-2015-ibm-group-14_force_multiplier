@@ -13,7 +13,8 @@ router.post("/login", Login);
 router.post("/setfieldengdata", field_checkauth, FieldEngineerData.postFieldEngineerLocation);
 router.post("/set-task", support_checkauth, Task.postNewTask);
 router.get("/assign-eng/:taskId",support_checkauth, Task.assignEng);
-router.get("/getfieldengdata/:userId", field_checkauth, FieldEngineerData.getfieldengdata)
+router.get("/getfieldengdata", field_checkauth, FieldEngineerData.getfieldengdata);
+router.get("/check-out/:taskId", field_checkauth, Task.checkout);
 //customer 
 
 

@@ -21,12 +21,15 @@ const userSchema = mongoose.Schema({
 		required: true,
 	},
 	taskQueue:
+		[
+			{
+				taskId: {
+					type: Schema.ObjectId, ref: 'task'
+				},
 
-		[{
-			taskId: {
-				type: Schema.ObjectId, ref: 'task'
+				min: { type: Number }
 			}
-		}],
+		],
 
 
 	userLocation: {
@@ -34,6 +37,9 @@ const userSchema = mongoose.Schema({
 		longitude: { type: String },
 		status: { type: String },
 
+	},
+	deviceId: {
+		type: String
 	},
 
 	createdAt: {
@@ -43,4 +49,4 @@ const userSchema = mongoose.Schema({
 });
 
 userSchema.plugin(uniqueValidator);
-module.exports = mongoose.model("users", userSchema);
+module.exports = mongoose.model("user", userSchema);
