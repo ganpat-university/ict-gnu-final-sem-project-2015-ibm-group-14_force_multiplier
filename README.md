@@ -3,8 +3,8 @@ ict-gnu-final-sem-project-2015-ibm-group-14_force_multiplier created by GitHub C
 
 FORCE MULTIPLIER
 
-For Accessing Force Multiplier API one can use the following URL:-https://forcemultiplierapi.eu-gb.mybluemix.net
-For example for using SignUp API the url is like :-https://forcemultiplierapi.eu-gb.mybluemix.net/api/signup
+For Accessing Force Multiplier API one can use the following URL:-https://forcemultiplier.eu-gb.mybluemix.net
+For example for using SignUp API the url is like :-https://forcemultiplier.eu-gb.mybluemix.net/api/signup
 
 The API are deploy at IBM Cloud in Cloud Foundry Application specify SDK for nodejs and the database use by the API is Mongo Atlas which is another platform to host Databases.The Connectivity is kept under config folder ->config.json.
 
@@ -17,7 +17,7 @@ Firebase Cloud Messaging(FCM) is use to send the notification to the field engin
 
 API's
 
-*{{localhost}} = "https://forcemultiplierapi.eu-gb.mybluemix.net"
+*{{localhost}} = "https://forcemultiplier.eu-gb.mybluemix.net"
 
 1. To signup into system (POST Method)
       {{localhost}}/api/signup?name="value"&emailAddress="value"&password="value&userCode="value"
